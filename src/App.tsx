@@ -9,13 +9,11 @@ function App() {
   const userStore = useSelector((state: AppStore) => state.user);
   return (
     <>
-      <Heading>Clean Architecture with React and TypeScript</Heading>
-
+      <Heading>Clean Architecture with React and TypeScript</Heading>      
+      <HomePage />
       <DataStyled>
         User from store: <code>{JSON.stringify(userStore, null, 2)} </code>
       </DataStyled>
-
-      <HomePage />
     </>
   );
 }

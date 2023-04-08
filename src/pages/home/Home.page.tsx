@@ -1,8 +1,8 @@
 import { LayoutStyledComponent } from "@/styled-components/layout.styled";
 import { CreateHomeButton, ModifyHomeButton, ResetHomeButton } from "./components";
-import { HomeTitle } from "./styled-components";
+import { HomeTitle } from "./styled-components"; 
 
-export const HomePage = () => {
+export const HomePage = () => { 
   return (
     <LayoutStyledComponent>
       <HomeTitle>Home Page</HomeTitle>

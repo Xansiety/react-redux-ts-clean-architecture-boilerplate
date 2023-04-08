@@ -1,23 +1,29 @@
-import { User } from "@/models";
+import { User, UserEmptyState } from "@/models";
 import { createUser } from "@/redux/slices/user.slice";
 import { useDispatch } from "react-redux";
+import { fetchRickAndMorty, rickAndMortyUrl } from "../services";
+import { useState, useEffect } from 'react';
 
 export const CreateHomeButton = () => {
   const dispatch = useDispatch();
+  const [morty, setMorty] = useState<User>(UserEmptyState);
 
-  const dispatchAction = () => {
-    // setTimeout(() => {
-      dispatch(createUser({ name: "John", id: 1, email: "test@test.com" } as User));
-    // }, 2000);
-  };
+  const getMorty = async () => {
+    const result = await fetchRickAndMorty(`${rickAndMortyUrl}/character/2`);
+    setMorty(result);    
+  }
 
-  // Execute dispatchAction only once on component mount
-  //   useEffect(() => {
-  //     dispatchAction();
-  //   }, []);
+  useEffect(() => {
+    getMorty();
+  }, []);
+
+  const dispatchAction = () => { 
+      dispatch(createUser(morty)); 
+  }; 
+
   return (
     <button onClick={dispatchAction}>
-      Dispatch Action Create user 
+      Dispatch Action Set and Create user  API Response
     </button>
   );
 };
