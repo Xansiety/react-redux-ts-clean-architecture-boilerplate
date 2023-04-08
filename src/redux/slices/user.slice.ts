@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 // Immutability is enforced by the toolkit
-export const userSlice = createSlice({
+export const UserSlice = createSlice({
   name: "user",
   initialState: UserEmptyState,
   reducers: {
@@ -21,7 +21,7 @@ export const userSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { createUser, modifyUser, resetUser } = userSlice.actions;
+export const { createUser, modifyUser, resetUser } = UserSlice.actions;
 
 // export reducer to be used in store configuration
-export default userSlice.reducer;
+export default UserSlice.reducer;

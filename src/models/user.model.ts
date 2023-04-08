@@ -1,4 +1,3 @@
-import { type } from "os";
 
 export interface User {
     id: number;
