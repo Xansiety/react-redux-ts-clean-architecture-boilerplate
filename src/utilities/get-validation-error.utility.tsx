@@ -4,6 +4,7 @@ import { TypeWithKey } from "@/models";
 export const getValidationError = (errorCode: string) => {
   const codeMatcher: TypeWithKey<string> = {
     ERR_NETWORK: "Se ha producido un error de red",
+    ERR_CANCELED: "Se ha cancelado la operación",
     required: "This field is required",
     min: "This field must be at least 6 characters",
     max: "This field must be at most 20 characters",

@@ -1,1 +1,1 @@
-export * from './Rick.page';
+export { default as RickPage } from './Rick.page';

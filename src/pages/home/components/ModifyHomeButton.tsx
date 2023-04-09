@@ -1,4 +1,3 @@
-import { User } from "@/models";
 import { modifyUser } from "@/redux/slices/user.slice";
 import { useDispatch } from "react-redux";
 

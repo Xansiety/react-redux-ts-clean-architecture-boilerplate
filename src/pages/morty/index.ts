@@ -1,1 +1,1 @@
-export * from './Morty.page';
+export { default as MortyPage } from "./Morty.page";

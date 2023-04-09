@@ -1,8 +1,8 @@
 import { User, UserEmptyState } from "@/models";
 import { createUser } from "@/redux/slices/user.slice";
 import { useDispatch } from "react-redux";
-import { fetchRickAndMorty, rickAndMortyUrl } from "../services";
 import { useState, useEffect } from 'react';
+import { fetchRickAndMorty, rickAndMortyUrl } from "@/services";
 
 export const CreateHomeButton = () => {
   const dispatch = useDispatch();

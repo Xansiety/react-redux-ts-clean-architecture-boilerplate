@@ -29,7 +29,8 @@ export const AxiosInterceptor = () => {
     },
     // if response has error, return error and can manage it, for example, show a snackbar with error message
     (error) => {
-      console.log("Error:", getValidationError(error.code));
+      // console.log("Error:", getValidationError(error.code));
+      console.log('error', error)
       alert(getValidationError(error.code));
       //SnackbarUtilities.error(getValidationError(error.code));
       return Promise.reject(error); // elimina la response y retorna el error
