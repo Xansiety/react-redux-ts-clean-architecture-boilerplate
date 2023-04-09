@@ -1,3 +1,4 @@
+import { BannerExperience } from "@/components";
 import { useAsync, useFetchAndLoad } from "@/hooks";
 import { getCoolRick } from "@/services";
 import { useState } from "react";
@@ -14,5 +15,17 @@ export default function RickPage() {
 
   useAsync(getApiData, adaptRick, () => {});
 
-  return <div>{loading ? "LOADING" : JSON.stringify(morty, null, 2)}</div>;
+  return (
+    <div>
+      {loading ? (
+        "LOADING"
+      ) : (
+        <div>
+          <BannerExperience />
+          <p>User info without adapter </p>
+          {JSON.stringify(morty, null, 2)}
+        </div>
+      )}
+    </div>
+  );
 }
