@@ -1,2 +1,2 @@
-export * from './index';
+export * from './type-with-key';
 export * from './user.model';

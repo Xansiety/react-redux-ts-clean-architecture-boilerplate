@@ -1,19 +1,21 @@
-import { useSelector } from "react-redux";
 import "./App.css";
-import { HomePage } from "./pages";
-import { AppStore } from "./redux/store";
-import { DataStyled, Heading } from "./styled-components";
+import { HomePage, MortyPage, RickPage } from "./pages";
+import { Heading } from "./styled-components";
+import { NavBar } from "./components";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  // getter for user from store, cant destructure it cons { user } = useSelector((state: AppStore) => state.user);
-  const userStore = useSelector((state: AppStore) => state.user);
   return (
     <>
-      <Heading>Clean Architecture with React and TypeScript</Heading>      
-      <HomePage />
-      <DataStyled>
-        User from store: <code>{JSON.stringify(userStore, null, 2)} </code>
-      </DataStyled>
+      <BrowserRouter>
+        <Heading>Clean Architecture with React and TypeScript</Heading>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/RickPage" element={<RickPage />} />
+          <Route path="/MortyPage" element={<MortyPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
